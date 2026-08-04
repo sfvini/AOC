@@ -1,0 +1,197 @@
+|top_de2_115
+KEY[0] => rudi:comp.clk
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => rudi:comp.rst
+SW[0] => rudi:comp.operando[0]
+SW[1] => rudi:comp.operando[1]
+SW[2] => rudi:comp.operando[2]
+SW[3] => rudi:comp.operando[3]
+SW[4] => rudi:comp.operando[4]
+SW[5] => rudi:comp.operando[5]
+SW[6] => rudi:comp.operando[6]
+SW[7] => rudi:comp.operando[7]
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => ~NO_FANOUT~
+SW[16] => rudi:comp.opcode[0]
+SW[17] => rudi:comp.opcode[1]
+LEDG[0] <= rudi:comp.cpu_out[0]
+LEDG[1] <= rudi:comp.cpu_out[1]
+LEDG[2] <= rudi:comp.cpu_out[2]
+LEDG[3] <= rudi:comp.cpu_out[3]
+LEDG[4] <= rudi:comp.cpu_out[4]
+LEDG[5] <= rudi:comp.cpu_out[5]
+LEDG[6] <= rudi:comp.cpu_out[6]
+LEDG[7] <= rudi:comp.cpu_out[7]
+
+
+|top_de2_115|rudi:comp
+clk => datapath:dp0.clk
+rst => datapath:dp0.rst
+opcode[0] => decode:decode0.opcode[0]
+opcode[1] => decode:decode0.opcode[1]
+operando[0] => datapath:dp0.operando[0]
+operando[1] => datapath:dp0.operando[1]
+operando[2] => datapath:dp0.operando[2]
+operando[3] => datapath:dp0.operando[3]
+operando[4] => datapath:dp0.operando[4]
+operando[5] => datapath:dp0.operando[5]
+operando[6] => datapath:dp0.operando[6]
+operando[7] => datapath:dp0.operando[7]
+cpu_out[0] <= datapath:dp0.cpu_out[0]
+cpu_out[1] <= datapath:dp0.cpu_out[1]
+cpu_out[2] <= datapath:dp0.cpu_out[2]
+cpu_out[3] <= datapath:dp0.cpu_out[3]
+cpu_out[4] <= datapath:dp0.cpu_out[4]
+cpu_out[5] <= datapath:dp0.cpu_out[5]
+cpu_out[6] <= datapath:dp0.cpu_out[6]
+cpu_out[7] <= datapath:dp0.cpu_out[7]
+
+
+|top_de2_115|rudi:comp|decode:decode0
+opcode[0] => ~NO_FANOUT~
+opcode[1] => ~NO_FANOUT~
+sel <= sel.DB_MAX_OUTPUT_PORT_TYPE
+wr_acc <= wr_acc.DB_MAX_OUTPUT_PORT_TYPE
+op <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de2_115|rudi:comp|datapath:dp0
+clk => regN:acc.clk
+rst => regN:acc.rst
+operando[0] => acc_in[0].DATAB
+operando[0] => ua:ua0.b[0]
+operando[1] => acc_in[1].DATAB
+operando[1] => ua:ua0.b[1]
+operando[2] => acc_in[2].DATAB
+operando[2] => ua:ua0.b[2]
+operando[3] => acc_in[3].DATAB
+operando[3] => ua:ua0.b[3]
+operando[4] => acc_in[4].DATAB
+operando[4] => ua:ua0.b[4]
+operando[5] => acc_in[5].DATAB
+operando[5] => ua:ua0.b[5]
+operando[6] => acc_in[6].DATAB
+operando[6] => ua:ua0.b[6]
+operando[7] => acc_in[7].DATAB
+operando[7] => ua:ua0.b[7]
+cpu_out[0] <= regN:acc.q[0]
+cpu_out[1] <= regN:acc.q[1]
+cpu_out[2] <= regN:acc.q[2]
+cpu_out[3] <= regN:acc.q[3]
+cpu_out[4] <= regN:acc.q[4]
+cpu_out[5] <= regN:acc.q[5]
+cpu_out[6] <= regN:acc.q[6]
+cpu_out[7] <= regN:acc.q[7]
+sel => acc_in[7].OUTPUTSELECT
+sel => acc_in[6].OUTPUTSELECT
+sel => acc_in[5].OUTPUTSELECT
+sel => acc_in[4].OUTPUTSELECT
+sel => acc_in[3].OUTPUTSELECT
+sel => acc_in[2].OUTPUTSELECT
+sel => acc_in[1].OUTPUTSELECT
+sel => acc_in[0].OUTPUTSELECT
+wr_acc => regN:acc.en
+op => ua:ua0.f
+
+
+|top_de2_115|rudi:comp|datapath:dp0|ua:ua0
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+f => ss.OUTPUTSELECT
+a[0] => Add0.IN8
+a[0] => Add1.IN16
+a[1] => Add0.IN7
+a[1] => Add1.IN15
+a[2] => Add0.IN6
+a[2] => Add1.IN14
+a[3] => Add0.IN5
+a[3] => Add1.IN13
+a[4] => Add0.IN4
+a[4] => Add1.IN12
+a[5] => Add0.IN3
+a[5] => Add1.IN11
+a[6] => Add0.IN2
+a[6] => Add1.IN10
+a[7] => Add0.IN1
+a[7] => Add1.IN9
+b[0] => Add0.IN16
+b[0] => Add1.IN8
+b[1] => Add0.IN15
+b[1] => Add1.IN7
+b[2] => Add0.IN14
+b[2] => Add1.IN6
+b[3] => Add0.IN13
+b[3] => Add1.IN5
+b[4] => Add0.IN12
+b[4] => Add1.IN4
+b[5] => Add0.IN11
+b[5] => Add1.IN3
+b[6] => Add0.IN10
+b[6] => Add1.IN2
+b[7] => Add0.IN9
+b[7] => Add1.IN1
+s[0] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[1] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[2] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[3] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[4] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[5] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[6] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+s[7] <= ss.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_de2_115|rudi:comp|datapath:dp0|regN:acc
+d[0] => q_reg[0].DATAIN
+d[1] => q_reg[1].DATAIN
+d[2] => q_reg[2].DATAIN
+d[3] => q_reg[3].DATAIN
+d[4] => q_reg[4].DATAIN
+d[5] => q_reg[5].DATAIN
+d[6] => q_reg[6].DATAIN
+d[7] => q_reg[7].DATAIN
+clk => q_reg[0].CLK
+clk => q_reg[1].CLK
+clk => q_reg[2].CLK
+clk => q_reg[3].CLK
+clk => q_reg[4].CLK
+clk => q_reg[5].CLK
+clk => q_reg[6].CLK
+clk => q_reg[7].CLK
+en => q_reg[7].ENA
+en => q_reg[6].ENA
+en => q_reg[5].ENA
+en => q_reg[4].ENA
+en => q_reg[3].ENA
+en => q_reg[2].ENA
+en => q_reg[1].ENA
+en => q_reg[0].ENA
+rst => q_reg[0].ACLR
+rst => q_reg[1].ACLR
+rst => q_reg[2].ACLR
+rst => q_reg[3].ACLR
+rst => q_reg[4].ACLR
+rst => q_reg[5].ACLR
+rst => q_reg[6].ACLR
+rst => q_reg[7].ACLR
+q[0] <= q_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+q[7] <= q_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
