@@ -15,23 +15,5 @@ end entity;
 
 architecture struct of decode is
 begin
- 
 
-	process(opcode)
-		begin
-		sel <= 'X';
-wr_acc <= 'X'; 
-op <= 'X';
-			case opcode is
-				when "00" => wr_acc <= '0';
-				when "01" => sel <= '0';
-								 wr_acc <= '1';
-				when "10" => sel <= '1';
-								 wr_acc <= '1';
-								 op <= '0';								 
-				when "11" => sel <= '1';
-								 wr_acc <= '1';	
-								 op <= '1';
-			end case;
-		end process;
 end architecture;

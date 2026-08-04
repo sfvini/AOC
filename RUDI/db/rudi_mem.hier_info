@@ -21,14 +21,14 @@ SW[14] => ~NO_FANOUT~
 SW[15] => ~NO_FANOUT~
 SW[16] => rudi:comp.opcode[0]
 SW[17] => rudi:comp.opcode[1]
-LEDG[0] <= rudi:comp.cpu_out[0]
-LEDG[1] <= rudi:comp.cpu_out[1]
-LEDG[2] <= rudi:comp.cpu_out[2]
-LEDG[3] <= rudi:comp.cpu_out[3]
-LEDG[4] <= rudi:comp.cpu_out[4]
-LEDG[5] <= rudi:comp.cpu_out[5]
-LEDG[6] <= rudi:comp.cpu_out[6]
-LEDG[7] <= rudi:comp.cpu_out[7]
+LEDG[0] << rudi:comp.cpu_out[0]
+LEDG[1] << rudi:comp.cpu_out[1]
+LEDG[2] << rudi:comp.cpu_out[2]
+LEDG[3] << rudi:comp.cpu_out[3]
+LEDG[4] << rudi:comp.cpu_out[4]
+LEDG[5] << rudi:comp.cpu_out[5]
+LEDG[6] << rudi:comp.cpu_out[6]
+LEDG[7] << rudi:comp.cpu_out[7]
 
 
 |top_de2_115|rudi:comp
@@ -55,11 +55,13 @@ cpu_out[7] <= datapath:dp0.cpu_out[7]
 
 
 |top_de2_115|rudi:comp|decode:decode0
-opcode[0] => ~NO_FANOUT~
-opcode[1] => ~NO_FANOUT~
-sel <= sel.DB_MAX_OUTPUT_PORT_TYPE
-wr_acc <= wr_acc.DB_MAX_OUTPUT_PORT_TYPE
-op <= comb.DB_MAX_OUTPUT_PORT_TYPE
+opcode[0] => Mux0.IN5
+opcode[0] => op.DATAIN
+opcode[1] => Mux0.IN4
+opcode[1] => sel.DATAIN
+sel <= opcode[1].DB_MAX_OUTPUT_PORT_TYPE
+wr_acc <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+op <= opcode[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_de2_115|rudi:comp|datapath:dp0

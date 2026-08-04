@@ -1,5 +1,5 @@
 Timing Analyzer report for rudi_mem
-Tue Aug  4 09:53:25 2026
+Tue Aug  4 11:09:55 2026
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
 
 
@@ -18,32 +18,47 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
  10. Slow 1200mV 85C Model Recovery Summary
  11. Slow 1200mV 85C Model Removal Summary
  12. Slow 1200mV 85C Model Minimum Pulse Width Summary
- 13. Slow 1200mV 85C Model Metastability Summary
- 14. Slow 1200mV 0C Model Fmax Summary
- 15. Slow 1200mV 0C Model Setup Summary
- 16. Slow 1200mV 0C Model Hold Summary
- 17. Slow 1200mV 0C Model Recovery Summary
- 18. Slow 1200mV 0C Model Removal Summary
- 19. Slow 1200mV 0C Model Minimum Pulse Width Summary
- 20. Slow 1200mV 0C Model Metastability Summary
- 21. Fast 1200mV 0C Model Setup Summary
- 22. Fast 1200mV 0C Model Hold Summary
- 23. Fast 1200mV 0C Model Recovery Summary
- 24. Fast 1200mV 0C Model Removal Summary
- 25. Fast 1200mV 0C Model Minimum Pulse Width Summary
- 26. Fast 1200mV 0C Model Metastability Summary
- 27. Multicorner Timing Analysis Summary
- 28. Board Trace Model Assignments
- 29. Input Transition Times
- 30. Signal Integrity Metrics (Slow 1200mv 0c Model)
- 31. Signal Integrity Metrics (Slow 1200mv 85c Model)
- 32. Signal Integrity Metrics (Fast 1200mv 0c Model)
- 33. Clock Transfers
- 34. Report TCCS
- 35. Report RSKM
- 36. Unconstrained Paths Summary
- 37. Clock Status Summary
- 38. Timing Analyzer Messages
+ 13. Slow 1200mV 85C Model Setup: 'KEY0'
+ 14. Slow 1200mV 85C Model Hold: 'KEY0'
+ 15. Slow 1200mV 85C Model Recovery: 'KEY0'
+ 16. Slow 1200mV 85C Model Removal: 'KEY0'
+ 17. Slow 1200mV 85C Model Metastability Summary
+ 18. Slow 1200mV 0C Model Fmax Summary
+ 19. Slow 1200mV 0C Model Setup Summary
+ 20. Slow 1200mV 0C Model Hold Summary
+ 21. Slow 1200mV 0C Model Recovery Summary
+ 22. Slow 1200mV 0C Model Removal Summary
+ 23. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Slow 1200mV 0C Model Setup: 'KEY0'
+ 25. Slow 1200mV 0C Model Hold: 'KEY0'
+ 26. Slow 1200mV 0C Model Recovery: 'KEY0'
+ 27. Slow 1200mV 0C Model Removal: 'KEY0'
+ 28. Slow 1200mV 0C Model Metastability Summary
+ 29. Fast 1200mV 0C Model Setup Summary
+ 30. Fast 1200mV 0C Model Hold Summary
+ 31. Fast 1200mV 0C Model Recovery Summary
+ 32. Fast 1200mV 0C Model Removal Summary
+ 33. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 34. Fast 1200mV 0C Model Setup: 'KEY0'
+ 35. Fast 1200mV 0C Model Hold: 'KEY0'
+ 36. Fast 1200mV 0C Model Recovery: 'KEY0'
+ 37. Fast 1200mV 0C Model Removal: 'KEY0'
+ 38. Fast 1200mV 0C Model Metastability Summary
+ 39. Multicorner Timing Analysis Summary
+ 40. Board Trace Model Assignments
+ 41. Input Transition Times
+ 42. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 43. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 44. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Recovery Transfers
+ 48. Removal Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths Summary
+ 52. Clock Status Summary
+ 53. Timing Analyzer Messages
 
 
 
@@ -89,12 +104,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 32          ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   1.3%      ;
 +----------------------------+-------------+
 
 
@@ -103,7 +118,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; SDC.sdc       ; OK     ; Tue Aug  4 09:53:24 2026 ;
+; SDC.sdc       ; OK     ; Tue Aug  4 11:09:54 2026 ;
 +---------------+--------+--------------------------+
 
 
@@ -112,14 +127,18 @@ https://fpgasoftware.intel.com/eula.
 +------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                                                                                                                                                                             ;
 +------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; KEY0       ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[0] KEY[1] KEY[2] KEY[3] SW[0] SW[1] SW[2] SW[3] SW[4] SW[5] SW[6] SW[7] SW[8] SW[9] SW[10] SW[11] SW[12] SW[13] SW[14] SW[15] SW[16] SW[17] LEDG[0] LEDG[1] LEDG[2] LEDG[3] LEDG[4] LEDG[5] LEDG[6] LEDG[7] } ;
+; KEY0       ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { SW[17] SW[16] SW[0] KEY[3] KEY[0] SW[1] SW[2] SW[3] SW[4] SW[5] SW[6] SW[7] KEY[1] KEY[2] SW[8] SW[9] SW[10] SW[11] SW[12] SW[13] SW[14] SW[15] LEDG[0] LEDG[1] LEDG[2] LEDG[3] LEDG[4] LEDG[5] LEDG[6] LEDG[7] } ;
 +------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
---------------------------------------
-; Slow 1200mV 85C Model Fmax Summary ;
---------------------------------------
-No paths to report.
++-------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary              ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 88.97 MHz ; 88.97 MHz       ; KEY0       ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
 ----------------------------------
@@ -128,37 +147,313 @@ No paths to report.
 HTML report is unavailable in plain text report export.
 
 
----------------------------------------
++-------------------------------------+
 ; Slow 1200mV 85C Model Setup Summary ;
----------------------------------------
-No paths to report.
++-------+-------+---------------------+
+; Clock ; Slack ; End Point TNS       ;
++-------+-------+---------------------+
+; KEY0  ; 4.380 ; 0.000               ;
++-------+-------+---------------------+
 
 
---------------------------------------
++------------------------------------+
 ; Slow 1200mV 85C Model Hold Summary ;
---------------------------------------
-No paths to report.
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; KEY0  ; 0.622 ; 0.000              ;
++-------+-------+--------------------+
 
 
-------------------------------------------
++----------------------------------------+
 ; Slow 1200mV 85C Model Recovery Summary ;
-------------------------------------------
-No paths to report.
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; KEY0  ; 7.155 ; 0.000                  ;
++-------+-------+------------------------+
 
 
------------------------------------------
++---------------------------------------+
 ; Slow 1200mV 85C Model Removal Summary ;
------------------------------------------
-No paths to report.
++-------+-------+-----------------------+
+; Clock ; Slack ; End Point TNS         ;
++-------+-------+-----------------------+
+; KEY0  ; 2.627 ; 0.000                 ;
++-------+-------+-----------------------+
 
 
 +---------------------------------------------------+
 ; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
-+-------+--------+----------------------------------+
-; Clock ; Slack  ; End Point TNS                    ;
-+-------+--------+----------------------------------+
-; KEY0  ; 15.790 ; 0.000                            ;
-+-------+--------+----------------------------------+
++-------+-------+-----------------------------------+
+; Clock ; Slack ; End Point TNS                     ;
++-------+-------+-----------------------------------+
+; KEY0  ; 9.656 ; 0.000                             ;
++-------+-------+-----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'KEY0'                                                                                                 ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 4.380  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.858      ;
+; 4.512  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.726      ;
+; 4.515  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.723      ;
+; 4.524  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.714      ;
+; 4.534  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.704      ;
+; 4.591  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.647      ;
+; 4.610  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.628      ;
+; 4.644  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.594      ;
+; 4.647  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.591      ;
+; 4.656  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.582      ;
+; 4.666  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.572      ;
+; 4.723  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.515      ;
+; 4.742  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.496      ;
+; 4.779  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.459      ;
+; 4.798  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.440      ;
+; 4.810  ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.428      ;
+; 4.855  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.383      ;
+; 4.874  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.364      ;
+; 4.907  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.331      ;
+; 5.039  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.199      ;
+; 5.058  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.180      ;
+; 5.171  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.067      ;
+; 5.172  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.066      ;
+; 5.185  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.053      ;
+; 5.190  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 8.048      ;
+; 5.303  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.935      ;
+; 5.317  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.921      ;
+; 5.322  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.916      ;
+; 5.326  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.912      ;
+; 5.330  ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.908      ;
+; 5.336  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.902      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.355  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.883      ;
+; 5.417  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.821      ;
+; 5.436  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.802      ;
+; 5.445  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.793      ;
+; 5.455  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.783      ;
+; 5.549  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.689      ;
+; 5.553  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.685      ;
+; 5.568  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.670      ;
+; 5.572  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.666      ;
+; 5.852  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.386      ;
+; 5.865  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.373      ;
+; 6.134  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.104      ;
+; 6.138  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.100      ;
+; 6.145  ; SW[7]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 7.093      ;
+; 13.852 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.386      ;
+; 13.984 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.254      ;
+; 14.003 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.235      ;
+; 14.004 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.234      ;
+; 14.023 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.215      ;
+; 14.068 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.170      ;
+; 14.087 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.151      ;
+; 14.116 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.122      ;
+; 14.135 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.103      ;
+; 14.136 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.102      ;
+; 14.155 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.083      ;
+; 14.200 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.038      ;
+; 14.219 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 9.019      ;
+; 14.257 ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.981      ;
+; 14.268 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.970      ;
+; 14.287 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.951      ;
+; 14.332 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.906      ;
+; 14.351 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.887      ;
+; 14.417 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.821      ;
+; 14.549 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.689      ;
+; 14.568 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.670      ;
+; 14.681 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.557      ;
+; 14.681 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.557      ;
+; 14.700 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.538      ;
+; 14.736 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.502      ;
+; 14.813 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.425      ;
+; 14.814 ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.424      ;
+; 14.829 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.409      ;
+; 14.832 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.406      ;
+; 14.868 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.370      ;
+; 14.887 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.351      ;
+; 14.922 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.316      ;
+; 14.958 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.280      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.959 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.279      ;
+; 14.977 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.261      ;
+; 15.015 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.223      ;
+; 15.090 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.148      ;
+; 15.092 ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.146      ;
+; 15.109 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.129      ;
+; 15.111 ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 8.127      ;
+; 15.399 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 7.839      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'KEY0'                                                                                                                                 ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.622  ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 0.851      ;
+; 0.696  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 0.925      ;
+; 0.696  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 0.925      ;
+; 0.696  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 0.925      ;
+; 0.699  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 0.928      ;
+; 0.699  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 0.928      ;
+; 0.846  ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 1.075      ;
+; 1.007  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.241      ;
+; 1.008  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.242      ;
+; 1.008  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.242      ;
+; 1.021  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.255      ;
+; 1.021  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.255      ;
+; 1.026  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.260      ;
+; 1.026  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.260      ;
+; 1.085  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 0.043      ; 1.314      ;
+; 1.128  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.362      ;
+; 1.129  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.363      ;
+; 1.129  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.363      ;
+; 1.133  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.367      ;
+; 1.134  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.368      ;
+; 1.134  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.368      ;
+; 1.147  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.381      ;
+; 1.152  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.386      ;
+; 1.155  ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.389      ;
+; 1.255  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.489      ;
+; 1.255  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.489      ;
+; 1.260  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.494      ;
+; 1.260  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.494      ;
+; 1.381  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.615      ;
+; 1.386  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.620      ;
+; 1.409  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.643      ;
+; 1.414  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.648      ;
+; 1.535  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.769      ;
+; 1.540  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.774      ;
+; 1.661  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.895      ;
+; 1.666  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.048      ; 1.900      ;
+; 2.725  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.279      ;
+; 2.737  ; SW[7]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.291      ;
+; 2.776  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.330      ;
+; 2.973  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.527      ;
+; 3.236  ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.790      ;
+; 3.244  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.798      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.252  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.806      ;
+; 3.415  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.969      ;
+; 3.438  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.992      ;
+; 3.498  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.052      ;
+; 3.559  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.113      ;
+; 3.564  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.118      ;
+; 3.685  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.239      ;
+; 3.690  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.244      ;
+; 3.811  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.365      ;
+; 3.816  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.370      ;
+; 3.832  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.386      ;
+; 3.935  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.489      ;
+; 3.951  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.505      ;
+; 3.971  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.525      ;
+; 3.974  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.528      ;
+; 4.061  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.615      ;
+; 4.100  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.654      ;
+; 4.176  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.730      ;
+; 4.187  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.741      ;
+; 4.193  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.747      ;
+; 4.245  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.799      ;
+; 4.302  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.856      ;
+; 4.313  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.867      ;
+; 4.371  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.925      ;
+; 4.439  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 7.993      ;
+; 4.497  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.051      ;
+; 4.565  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.119      ;
+; 4.628  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.182      ;
+; 4.700  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.254      ;
+; 4.749  ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.303      ;
+; 4.754  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.308      ;
+; 4.826  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.380      ;
+; 4.876  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.430      ;
+; 4.880  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.434      ;
+; 4.913  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.467      ;
+; 4.952  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.506      ;
+; 5.002  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.556      ;
+; 5.039  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.593      ;
+; 5.128  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 8.682      ;
+; 12.239 ; SW[7]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.813      ;
+; 12.242 ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.816      ;
+; 12.293 ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.867      ;
+; 12.496 ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.070      ;
+; 12.698 ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.272      ;
+; 12.700 ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.274      ;
+; 12.750 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.324      ;
+; 12.750 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.324      ;
+; 12.750 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.324      ;
+; 12.750 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.324      ;
+; 12.750 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.324      ;
+; 12.750 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 6.324      ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Recovery: 'KEY0'                                                                                              ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 7.155  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 3.240      ; 6.083      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
+; 16.775 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 3.240      ; 6.463      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Removal: 'KEY0'                                                                                               ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 2.627  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.368      ; 6.181      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
+; 12.236 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; -10.000      ; 3.368      ; 5.810      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 -----------------------------------------------
@@ -167,43 +462,323 @@ No paths to report.
 No synchronizer chains to report.
 
 
--------------------------------------
-; Slow 1200mV 0C Model Fmax Summary ;
--------------------------------------
-No paths to report.
++-------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 99.07 MHz ; 99.07 MHz       ; KEY0       ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
---------------------------------------
++------------------------------------+
 ; Slow 1200mV 0C Model Setup Summary ;
---------------------------------------
-No paths to report.
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; KEY0  ; 4.953 ; 0.000              ;
++-------+-------+--------------------+
 
 
--------------------------------------
++-----------------------------------+
 ; Slow 1200mV 0C Model Hold Summary ;
--------------------------------------
-No paths to report.
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; KEY0  ; 0.572 ; 0.000             ;
++-------+-------+-------------------+
 
 
------------------------------------------
++---------------------------------------+
 ; Slow 1200mV 0C Model Recovery Summary ;
------------------------------------------
-No paths to report.
++-------+-------+-----------------------+
+; Clock ; Slack ; End Point TNS         ;
++-------+-------+-----------------------+
+; KEY0  ; 7.462 ; 0.000                 ;
++-------+-------+-----------------------+
 
 
-----------------------------------------
++--------------------------------------+
 ; Slow 1200mV 0C Model Removal Summary ;
-----------------------------------------
-No paths to report.
++-------+-------+----------------------+
+; Clock ; Slack ; End Point TNS        ;
++-------+-------+----------------------+
+; KEY0  ; 2.224 ; 0.000                ;
++-------+-------+----------------------+
 
 
 +--------------------------------------------------+
 ; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
-+-------+--------+---------------------------------+
-; Clock ; Slack  ; End Point TNS                   ;
-+-------+--------+---------------------------------+
-; KEY0  ; 15.790 ; 0.000                           ;
-+-------+--------+---------------------------------+
++-------+-------+----------------------------------+
+; Clock ; Slack ; End Point TNS                    ;
++-------+-------+----------------------------------+
+; KEY0  ; 9.778 ; 0.000                            ;
++-------+-------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'KEY0'                                                                                                  ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 4.953  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.982      ;
+; 5.008  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.927      ;
+; 5.015  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.920      ;
+; 5.044  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.891      ;
+; 5.069  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.866      ;
+; 5.077  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.858      ;
+; 5.106  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.829      ;
+; 5.124  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.811      ;
+; 5.131  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.804      ;
+; 5.160  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.775      ;
+; 5.185  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.750      ;
+; 5.193  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.742      ;
+; 5.222  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.713      ;
+; 5.247  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.688      ;
+; 5.276  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.659      ;
+; 5.309  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.626      ;
+; 5.338  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.597      ;
+; 5.346  ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.589      ;
+; 5.430  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.505      ;
+; 5.519  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.416      ;
+; 5.546  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.389      ;
+; 5.589  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.346      ;
+; 5.635  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.300      ;
+; 5.662  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.273      ;
+; 5.703  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.232      ;
+; 5.742  ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.193      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.745  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.190      ;
+; 5.751  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.184      ;
+; 5.767  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.168      ;
+; 5.776  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.159      ;
+; 5.778  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.157      ;
+; 5.819  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.116      ;
+; 5.829  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.106      ;
+; 5.837  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.098      ;
+; 5.850  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.085      ;
+; 5.866  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 7.069      ;
+; 5.953  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.982      ;
+; 5.971  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.964      ;
+; 5.982  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.953      ;
+; 6.000  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.935      ;
+; 6.216  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.719      ;
+; 6.242  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.693      ;
+; 6.468  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.467      ;
+; 6.486  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.449      ;
+; 6.491  ; SW[7]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 6.444      ;
+; 14.636 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.299      ;
+; 14.715 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.220      ;
+; 14.725 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.210      ;
+; 14.744 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.191      ;
+; 14.752 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.183      ;
+; 14.755 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.180      ;
+; 14.784 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.151      ;
+; 14.831 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.104      ;
+; 14.841 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.094      ;
+; 14.860 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.075      ;
+; 14.868 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.067      ;
+; 14.871 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.064      ;
+; 14.900 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 8.035      ;
+; 14.947 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.988      ;
+; 14.976 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.959      ;
+; 14.987 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.948      ;
+; 14.989 ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.946      ;
+; 15.016 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.919      ;
+; 15.141 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.794      ;
+; 15.257 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.678      ;
+; 15.264 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.671      ;
+; 15.306 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.629      ;
+; 15.373 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.562      ;
+; 15.380 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.555      ;
+; 15.419 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.516      ;
+; 15.419 ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.516      ;
+; 15.467 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.468      ;
+; 15.487 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.448      ;
+; 15.489 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.446      ;
+; 15.496 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.439      ;
+; 15.507 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.428      ;
+; 15.535 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.400      ;
+; 15.567 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.368      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.591 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.344      ;
+; 15.596 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.339      ;
+; 15.647 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.288      ;
+; 15.683 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.252      ;
+; 15.690 ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.245      ;
+; 15.712 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.223      ;
+; 15.719 ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 7.216      ;
+; 15.953 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 6.982      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'KEY0'                                                                                                                                  ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.572  ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.782      ;
+; 0.634  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.844      ;
+; 0.636  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.846      ;
+; 0.636  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.846      ;
+; 0.638  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.848      ;
+; 0.638  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.848      ;
+; 0.784  ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 0.994      ;
+; 0.914  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.129      ;
+; 0.918  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.133      ;
+; 0.918  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.133      ;
+; 0.921  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.136      ;
+; 0.921  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.136      ;
+; 0.932  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.147      ;
+; 0.932  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.147      ;
+; 0.994  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 0.039      ; 1.204      ;
+; 1.013  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.228      ;
+; 1.017  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.232      ;
+; 1.017  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.232      ;
+; 1.024  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.239      ;
+; 1.028  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.243      ;
+; 1.028  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.243      ;
+; 1.031  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.246      ;
+; 1.042  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.257      ;
+; 1.064  ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.279      ;
+; 1.127  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.342      ;
+; 1.127  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.342      ;
+; 1.138  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.353      ;
+; 1.138  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.353      ;
+; 1.237  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.452      ;
+; 1.248  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.463      ;
+; 1.260  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.475      ;
+; 1.304  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.519      ;
+; 1.370  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.585      ;
+; 1.414  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.629      ;
+; 1.480  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.695      ;
+; 1.524  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.044      ; 1.739      ;
+; 2.321  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.544      ;
+; 2.330  ; SW[7]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.553      ;
+; 2.369  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.592      ;
+; 2.547  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.770      ;
+; 2.788  ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.011      ;
+; 2.795  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.018      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.800  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.023      ;
+; 2.942  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.165      ;
+; 2.947  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.170      ;
+; 3.022  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.245      ;
+; 3.046  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.269      ;
+; 3.057  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.280      ;
+; 3.156  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.379      ;
+; 3.167  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.390      ;
+; 3.266  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.489      ;
+; 3.277  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.500      ;
+; 3.292  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.515      ;
+; 3.391  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.614      ;
+; 3.410  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.633      ;
+; 3.474  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.697      ;
+; 3.481  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.704      ;
+; 3.501  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.724      ;
+; 3.591  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.814      ;
+; 3.614  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.837      ;
+; 3.625  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.848      ;
+; 3.659  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.882      ;
+; 3.670  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.893      ;
+; 3.724  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.947      ;
+; 3.769  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 6.992      ;
+; 3.780  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.003      ;
+; 3.879  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.102      ;
+; 3.890  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.113      ;
+; 3.989  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.212      ;
+; 4.019  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.242      ;
+; 4.118  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.341      ;
+; 4.129  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.352      ;
+; 4.139  ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.362      ;
+; 4.228  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.451      ;
+; 4.239  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.462      ;
+; 4.256  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.479      ;
+; 4.267  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.490      ;
+; 4.338  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.561      ;
+; 4.366  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.589      ;
+; 4.377  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.600      ;
+; 4.476  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 7.699      ;
+; 12.018 ; SW[7]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.261      ;
+; 12.020 ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.263      ;
+; 12.058 ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.301      ;
+; 12.259 ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.502      ;
+; 12.436 ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.679      ;
+; 12.444 ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.687      ;
+; 12.493 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.736      ;
+; 12.493 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.736      ;
+; 12.493 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.736      ;
+; 12.493 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.736      ;
+; 12.493 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.736      ;
+; 12.493 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.736      ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Recovery: 'KEY0'                                                                                               ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 7.462  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.936      ; 5.473      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
+; 17.242 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.936      ; 5.693      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Removal: 'KEY0'                                                                                                ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 2.224  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 3.052      ; 5.447      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
+; 11.987 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; -10.000      ; 3.052      ; 5.230      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -212,37 +787,313 @@ No paths to report.
 No synchronizer chains to report.
 
 
---------------------------------------
++------------------------------------+
 ; Fast 1200mV 0C Model Setup Summary ;
---------------------------------------
-No paths to report.
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; KEY0  ; 7.521 ; 0.000              ;
++-------+-------+--------------------+
 
 
--------------------------------------
++-----------------------------------+
 ; Fast 1200mV 0C Model Hold Summary ;
--------------------------------------
-No paths to report.
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; KEY0  ; 0.275 ; 0.000             ;
++-------+-------+-------------------+
 
 
------------------------------------------
++---------------------------------------+
 ; Fast 1200mV 0C Model Recovery Summary ;
------------------------------------------
-No paths to report.
++-------+-------+-----------------------+
+; Clock ; Slack ; End Point TNS         ;
++-------+-------+-----------------------+
+; KEY0  ; 8.921 ; 0.000                 ;
++-------+-------+-----------------------+
 
 
-----------------------------------------
++--------------------------------------+
 ; Fast 1200mV 0C Model Removal Summary ;
-----------------------------------------
-No paths to report.
++-------+-------+----------------------+
+; Clock ; Slack ; End Point TNS        ;
++-------+-------+----------------------+
+; KEY0  ; 1.444 ; 0.000                ;
++-------+-------+----------------------+
 
 
 +--------------------------------------------------+
 ; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
-+-------+--------+---------------------------------+
-; Clock ; Slack  ; End Point TNS                   ;
-+-------+--------+---------------------------------+
-; KEY0  ; 16.000 ; 0.000                           ;
-+-------+--------+---------------------------------+
++-------+-------+----------------------------------+
+; Clock ; Slack ; End Point TNS                    ;
++-------+-------+----------------------------------+
+; KEY0  ; 9.269 ; 0.000                            ;
++-------+-------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'KEY0'                                                                                                  ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.521  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.478      ;
+; 7.585  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.414      ;
+; 7.589  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.410      ;
+; 7.624  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.375      ;
+; 7.646  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.353      ;
+; 7.653  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.346      ;
+; 7.657  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.342      ;
+; 7.669  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.330      ;
+; 7.677  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.322      ;
+; 7.692  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.307      ;
+; 7.703  ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.296      ;
+; 7.714  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.285      ;
+; 7.737  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.262      ;
+; 7.745  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.254      ;
+; 7.760  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.239      ;
+; 7.772  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.227      ;
+; 7.782  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.217      ;
+; 7.805  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.194      ;
+; 7.813  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.186      ;
+; 7.836  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.163      ;
+; 7.840  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.159      ;
+; 7.857  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.142      ;
+; 7.904  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.095      ;
+; 7.908  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.091      ;
+; 7.921  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.078      ;
+; 7.925  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.074      ;
+; 7.941  ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.058      ;
+; 7.972  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.027      ;
+; 7.976  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.023      ;
+; 7.987  ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.012      ;
+; 7.991  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 4.008      ;
+; 8.032  ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.967      ;
+; 8.077  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.922      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.083  ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.916      ;
+; 8.096  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.903      ;
+; 8.120  ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.879      ;
+; 8.133  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.866      ;
+; 8.145  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.854      ;
+; 8.156  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.843      ;
+; 8.164  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.835      ;
+; 8.210  ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.789      ;
+; 8.260  ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.739      ;
+; 8.379  ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.620      ;
+; 8.391  ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.608      ;
+; 8.400  ; SW[7]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.599      ;
+; 16.719 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.280      ;
+; 16.783 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.216      ;
+; 16.787 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.212      ;
+; 16.851 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.148      ;
+; 16.851 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.148      ;
+; 16.855 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.144      ;
+; 16.858 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.141      ;
+; 16.883 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.116      ;
+; 16.907 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.092      ;
+; 16.913 ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.086      ;
+; 16.919 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.080      ;
+; 16.926 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.073      ;
+; 16.951 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.048      ;
+; 16.975 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.024      ;
+; 16.987 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.012      ;
+; 16.994 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 5.005      ;
+; 17.019 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.980      ;
+; 17.024 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.975      ;
+; 17.043 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.956      ;
+; 17.088 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.911      ;
+; 17.092 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.907      ;
+; 17.139 ; SW[2]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.860      ;
+; 17.156 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.843      ;
+; 17.159 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.840      ;
+; 17.160 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.839      ;
+; 17.197 ; SW[6]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.802      ;
+; 17.223 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.776      ;
+; 17.224 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.775      ;
+; 17.227 ; SW[4]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.772      ;
+; 17.228 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.771      ;
+; 17.230 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.769      ;
+; 17.244 ; SW[1]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.755      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.284 ; SW[17]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.715      ;
+; 17.315 ; SW[16]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.684      ;
+; 17.343 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.656      ;
+; 17.381 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.618      ;
+; 17.392 ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.607      ;
+; 17.411 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.588      ;
+; 17.434 ; SW[5]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.565      ;
+; 17.449 ; SW[3]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.550      ;
+; 17.512 ; SW[0]     ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 4.487      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'KEY0'                                                                                                                                  ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.275  ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.383      ;
+; 0.318  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.426      ;
+; 0.319  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.427      ;
+; 0.319  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.427      ;
+; 0.319  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.427      ;
+; 0.319  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.427      ;
+; 0.378  ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.486      ;
+; 0.464  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.574      ;
+; 0.465  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.575      ;
+; 0.465  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.575      ;
+; 0.476  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.586      ;
+; 0.476  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.586      ;
+; 0.479  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.589      ;
+; 0.479  ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.589      ;
+; 0.483  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 0.024      ; 0.591      ;
+; 0.524  ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.634      ;
+; 0.527  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.637      ;
+; 0.528  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.638      ;
+; 0.528  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.638      ;
+; 0.530  ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.640      ;
+; 0.531  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.641      ;
+; 0.531  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.641      ;
+; 0.542  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.652      ;
+; 0.545  ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.655      ;
+; 0.594  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.704      ;
+; 0.594  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.704      ;
+; 0.597  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.707      ;
+; 0.597  ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.707      ;
+; 0.640  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.750      ;
+; 0.643  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.753      ;
+; 0.660  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.770      ;
+; 0.663  ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.773      ;
+; 0.706  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.816      ;
+; 0.709  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.819      ;
+; 0.772  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.882      ;
+; 0.775  ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 0.026      ; 0.885      ;
+; 1.505  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.672      ;
+; 1.505  ; SW[7]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.672      ;
+; 1.537  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.704      ;
+; 1.649  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.816      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.780  ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.947      ;
+; 1.801  ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.968      ;
+; 1.803  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.970      ;
+; 1.883  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.050      ;
+; 1.891  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.058      ;
+; 1.950  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.117      ;
+; 1.954  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.121      ;
+; 1.957  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.124      ;
+; 2.020  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.187      ;
+; 2.023  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.190      ;
+; 2.056  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.223      ;
+; 2.059  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.226      ;
+; 2.078  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.245      ;
+; 2.081  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.248      ;
+; 2.089  ; SW[16]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.256      ;
+; 2.092  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.259      ;
+; 2.095  ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.262      ;
+; 2.144  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.311      ;
+; 2.147  ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.314      ;
+; 2.166  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.333      ;
+; 2.201  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.368      ;
+; 2.229  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.396      ;
+; 2.232  ; SW[4]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.399      ;
+; 2.264  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.431      ;
+; 2.267  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.434      ;
+; 2.330  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.497      ;
+; 2.333  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.500      ;
+; 2.396  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.563      ;
+; 2.399  ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.566      ;
+; 2.468  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.635      ;
+; 2.471  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.638      ;
+; 2.483  ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.650      ;
+; 2.534  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.701      ;
+; 2.537  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.704      ;
+; 2.549  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.716      ;
+; 2.600  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.767      ;
+; 2.603  ; SW[1]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.770      ;
+; 2.612  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.779      ;
+; 2.615  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.782      ;
+; 2.678  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.845      ;
+; 2.681  ; SW[2]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 4.848      ;
+; 10.769 ; SW[7]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.956      ;
+; 10.773 ; SW[3]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.960      ;
+; 10.800 ; SW[5]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.987      ;
+; 10.904 ; SW[0]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.091      ;
+; 11.015 ; SW[6]                                    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.202      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
+; 11.018 ; SW[17]                                   ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 3.205      ;
++--------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Recovery: 'KEY0'                                                                                               ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 8.921  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 10.000       ; 2.012      ; 3.078      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
+; 18.235 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 20.000       ; 2.012      ; 3.764      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Removal: 'KEY0'                                                                                                ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 1.444  ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; 0.000        ; 2.083      ; 3.611      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[0] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[1] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[2] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[3] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[4] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[5] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[6] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
+; 10.742 ; KEY[3]    ; rudi:comp|datapath:dp0|regN:acc|q_reg[7] ; KEY0         ; KEY0        ; -10.000      ; 2.083      ; 2.929      ;
++--------+-----------+------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -251,16 +1102,16 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; 15.790              ;
-;  KEY0            ; N/A   ; N/A  ; N/A      ; N/A     ; 15.790              ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-;  KEY0            ; N/A   ; N/A  ; N/A      ; N/A     ; 0.000               ;
-+------------------+-------+------+----------+---------+---------------------+
++-----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                         ;
++------------------+-------+-------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 4.380 ; 0.275 ; 7.155    ; 1.444   ; 9.269               ;
+;  KEY0            ; 4.380 ; 0.275 ; 7.155    ; 1.444   ; 9.269               ;
+; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  KEY0            ; 0.000 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
++------------------+-------+-------+----------+---------+---------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,18 +1136,8 @@ No synchronizer chains to report.
 +-------------------------+--------------+-----------------+-----------------+
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
-; KEY[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; KEY[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[1]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[3]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[4]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[5]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[6]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; SW[7]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[8]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[9]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[10]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -305,8 +1146,18 @@ No synchronizer chains to report.
 ; SW[13]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[14]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[15]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[16]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; SW[17]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[1]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[3]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[4]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[5]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[6]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[7]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -364,10 +1215,44 @@ No synchronizer chains to report.
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 0        ; 0        ; 112      ; 148      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 0        ; 0        ; 112      ; 148      ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Recovery Transfers                                                ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 0        ; 0        ; 8        ; 8        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Removal Transfers                                                 ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; KEY0       ; KEY0     ; 0        ; 0        ; 8        ; 8        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -440,7 +1325,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
-    Info: Processing started: Tue Aug  4 09:53:24 2026
+    Info: Processing started: Tue Aug  4 11:09:54 2026
 Info: Command: quartus_sta rudi_mem -c rudi_mem
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 2 processors
@@ -448,46 +1333,80 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: 'SDC.sdc'
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 15.790
+Info (332146): Worst-case setup slack is 4.380
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.790               0.000 KEY0 
+    Info (332119):     4.380               0.000 KEY0 
+Info (332146): Worst-case hold slack is 0.622
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.622               0.000 KEY0 
+Info (332146): Worst-case recovery slack is 7.155
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     7.155               0.000 KEY0 
+Info (332146): Worst-case removal slack is 2.627
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     2.627               0.000 KEY0 
+Info (332146): Worst-case minimum pulse width slack is 9.656
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.656               0.000 KEY0 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 15.790
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 4.953
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    15.790               0.000 KEY0 
+    Info (332119):     4.953               0.000 KEY0 
+Info (332146): Worst-case hold slack is 0.572
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.572               0.000 KEY0 
+Info (332146): Worst-case recovery slack is 7.462
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     7.462               0.000 KEY0 
+Info (332146): Worst-case removal slack is 2.224
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     2.224               0.000 KEY0 
+Info (332146): Worst-case minimum pulse width slack is 9.778
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.778               0.000 KEY0 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 16.000
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 7.521
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    16.000               0.000 KEY0 
+    Info (332119):     7.521               0.000 KEY0 
+Info (332146): Worst-case hold slack is 0.275
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.275               0.000 KEY0 
+Info (332146): Worst-case recovery slack is 8.921
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.921               0.000 KEY0 
+Info (332146): Worst-case removal slack is 1.444
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.444               0.000 KEY0 
+Info (332146): Worst-case minimum pulse width slack is 9.269
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.269               0.000 KEY0 
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 498 megabytes
-    Info: Processing ended: Tue Aug  4 09:53:25 2026
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Tue Aug  4 11:09:55 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
