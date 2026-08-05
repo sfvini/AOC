@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	/home/aluno/AOC/ROM/first_cpu_mem.qarlog
+
+Archive:	/home/aluno/AOC/ROM/first_cpu_mem.qar
+Date:		Wed Aug  5 09:25:15 2026
+Quartus Prime		20.1.1 Build 720 11/11/2020 SJ Standard Edition
+
+	=========== Files Selected: ===========
+/home/aluno/AOC/ROM/SDC1.sdc
+/home/aluno/AOC/ROM/assignment_defaults.qdf
+/home/aluno/AOC/ROM/bcd2ssd.bsf
+/home/aluno/AOC/ROM/bcd2ssd.vhd
+/home/aluno/AOC/ROM/dados.txt
+/home/aluno/AOC/ROM/first_cpu_mem.bdf
+/home/aluno/AOC/ROM/first_cpu_mem.qpf
+/home/aluno/AOC/ROM/first_cpu_mem.qsf
+/home/aluno/AOC/ROM/first_cpu_mem.vwf
+/home/aluno/AOC/ROM/first_cpu_mem_assignment_defaults.qdf
+/home/aluno/AOC/ROM/inc.bsf
+/home/aluno/AOC/ROM/inc.vhd
+/home/aluno/AOC/ROM/lpm_add_sub0.bsf
+/home/aluno/AOC/ROM/lpm_add_sub0.cmp
+/home/aluno/AOC/ROM/lpm_add_sub0.qip
+/home/aluno/AOC/ROM/lpm_add_sub0.vhd
+/home/aluno/AOC/ROM/rom.mif
+	======= Total: 17 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

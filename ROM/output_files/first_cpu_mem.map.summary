@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Aug  5 09:24:49 2026
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+Revision Name : first_cpu_mem
+Top-level Entity Name : first_cpu_mem
+Family : Cyclone IV E
+Total logic elements : 33
+    Total combinational functions : 33
+    Dedicated logic registers : 23
+Total registers : 23
+Total pins : 27
+Total virtual pins : 0
+Total memory bits : 2,560
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,90 @@
+Restore Archived Project report for first_cpu_mem
+Wed Aug  5 09:14:24 2026
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------+
+; Restore Archived Project Summary                                        ;
++---------------------------------+---------------------------------------+
+; Restore Archived Project Status ; Successful - Wed Aug  5 09:14:24 2026 ;
+; Revision Name                   ; first_cpu_mem                         ;
+; Top-level Entity Name           ; first_cpu_mem                         ;
+; Family                          ; Cyclone IV E                          ;
++---------------------------------+---------------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Info: Successfully restored '/home/aluno/Downloads/first_cpu_mem.qar' into the '/home/aluno/AOC/ROM/' directory
+Info: Generated report 'first_cpu_mem.restore.rpt'
+Info (23030): Evaluation of Tcl script /opt/altera/intelFPGA/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 573 megabytes
+    Info: Processing ended: Wed Aug  5 09:14:24 2026
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++----------------------------------------------------------+
+; Files Restored                                           ;
++----------------------------------------------------------+
+; File Name                                                ;
++----------------------------------------------------------+
+; SDC1.sdc                                                 ;
+; assignment_defaults.qdf                                  ;
+; bcd2ssd.bsf                                              ;
+; bcd2ssd.vhd                                              ;
+; first_cpu_mem.bdf                                        ;
+; first_cpu_mem.qpf                                        ;
+; first_cpu_mem.qsf                                        ;
+; first_cpu_mem.vwf                                        ;
+; inc.bsf                                                  ;
+; inc.vhd                                                  ;
+; incremental_db/compiled_partitions/first_cpu_mem.db_info ;
+; lpm_add_sub0.bsf                                         ;
+; lpm_add_sub0.cmp                                         ;
+; lpm_add_sub0.qip                                         ;
+; lpm_add_sub0.vhd                                         ;
+; rom.mif                                                  ;
++----------------------------------------------------------+
+
+
++--------------------+
+; Files Not Restored ;
++--------------------+
+; File Name          ;
++--------------------+
+
+
