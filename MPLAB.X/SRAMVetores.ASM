@@ -1,13 +1,13 @@
 .DSEG
 .ORG SRAM_START
-;    Declare três vetores com 10 posições de 8 bits (A1, A2 e A3) e um vetor de 3 posições de 8 bits (A4).
+;    Declare trÃªs vetores com 10 posiÃ§Ãµes de 8 bits (A1, A2 e A3) e um vetor de 3 posiÃ§Ãµes de 8 bits (A4).
     A1: .BYTE 10 
     A2: .BYTE 10
     A3: .BYTE 10
     A4: .BYTE 3 
     
 .CSEG
-;    Inicialize os vetores A1 e A2 com os valores de 1 até 10.
+;    Inicialize os vetores A1 e A2 com os valores de 1 atÃ© 10.
     LDI R27, HIGH(A1)     
     LDI R26, LOW(A1)      
 
@@ -25,7 +25,7 @@ loop:
     DEC R17               
     BRNE loop    
     
-;   Some a primeira posição do A1 com a última do A2 e armazene na primeira do A3. Faça isso para todas as posições. 
+;   Some a primeira posiÃ§Ã£o do A1 com a Ãºltima do A2 e armazene na primeira do A3. FaÃ§a isso para todas as posiÃ§Ãµes. 
     
     
     
