@@ -1,7 +1,4 @@
 ; =============================================================================
-; PROGRAMA EM ASSEMBLY AVR (ATmega328P): MANIPULAÇÃO E SOMA DE VETORES NA SRAM
-; Nome do Arquivo: VETORES.asm
-; =============================================================================
 ; DESCRIÇÃO:
 ;   1. Aloca quatro vetores na SRAM: A1 (10 bytes), A2 (10 bytes), A3 (10 bytes) e A4 (3 bytes).
 ;   2. Inicializa A1 e A2 com a sequência de 1 até 10 usando pós-incremento (ST X+, ST Y+).
