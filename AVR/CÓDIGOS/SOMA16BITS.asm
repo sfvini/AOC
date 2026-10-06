@@ -1,7 +1,4 @@
 ; =============================================================================
-; PROGRAMA: Soma de 16 bits (C = A + B) em 4 Modos de Endereçamento (ATmega328P)
-; Nome do Arquivo: SOMA16BITS.asm
-; =============================================================================
 ; DESCRIÇÃO:
 ;   Soma duas variáveis de 16 bits (A e B) e armazena o resultado em C (16 bits).
 ;   Implementa os 4 modos de endereçamento da SRAM:
@@ -22,12 +19,6 @@
     RJMP START               ; Salta para o início da execução
 
 START:
-    ; --- Inicialização do Stack Pointer (Pilha) ---
-    LDI R16, HIGH(RAMEND)    ; Carrega o byte alto de RAMEND (0x08)
-    OUT SPH, R16             ; Configura SPH
-    LDI R16, LOW(RAMEND)     ; Carrega o byte baixo de RAMEND (0xFF)
-    OUT SPL, R16             ; Configura SPL (SP aponta para 0x08FF)
-
 ; =============================================================================
 ; MODO 1: DIRETO (sem ponteiros) - LDS e STS
 ; =============================================================================
@@ -81,9 +72,14 @@ START:
 ; MODO 3: INDIRETO COM PÓS-INCREMENTO - LD X+ e ST Z+
 ; =============================================================================
     ; Reinicializa os ponteiros na base das variáveis
-    LDI XH, HIGH(A) \ LDI XL, LOW(A)
-    LDI YH, HIGH(B) \ LDI YL, LOW(B)
-    LDI ZH, HIGH(C) \ LDI ZL, LOW(C)
+    LDI XH, HIGH(A) 
+    LDI XL, LOW(A)
+
+    LDI YH, HIGH(B) 
+    LDI YL, LOW(B)
+
+    LDI ZH, HIGH(C) 
+    LDI ZL, LOW(C)
 
     ; Byte 0 (LSB)
     LD R16, X+               ; Lê A[0] e incrementa o ponteiro X (+1) automaticamente
