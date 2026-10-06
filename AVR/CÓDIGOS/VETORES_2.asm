@@ -1,9 +1,5 @@
 ; =============================================================================
-; PROGRAMA EM ASSEMBLY AVR (ATmega328P): MANIPULAÇÃO AVANÇADA DE VETORES
-; Nome do Arquivo: VETORES_2.asm
-; Autor Original: Igor da Silva
-; =============================================================================
-; REQUISITOS DO PROGRAMA:
+; DESCRIÇÃO:
 ; 1. Declarar dois vetores com 8 posições de 8 bits (V0 e V1) e um vetor com 4 posições (V2).
 ; 2. Inicializar V0 com os valores de 8 até 15.
 ; 3. Copiar V0 de trás para frente para V1 (usando pré-decremento).
