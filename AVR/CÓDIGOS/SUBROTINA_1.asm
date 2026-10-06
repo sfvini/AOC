@@ -1,6 +1,9 @@
-; ==============================================================================
-; PROGRAMA EM ASSEMBLY AVR (ATmega328P): OPERAÇÕES DE 32 BITS
-; ==============================================================================
+; =============================================================================
+; DESCRIÇÃO:
+; 1. init_32bits: Escreve os registradores R16-R19 nos 4 bytes da SRAM apontados por X.
+; 2. sub_32bits: Calcula C = A - B em 32 bits.
+; 3. zera_32bits: Preenche 4 bytes contíguos com 0x00 no endereço apontado por X.
+; =============================================================================
 
 .DSEG                        ; Seleciona o segmento de memória de dados (SRAM)
 .ORG SRAM_START              ; Define o endereço inicial da SRAM (0x0100 no ATmega328P)
