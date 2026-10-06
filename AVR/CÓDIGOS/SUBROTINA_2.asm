@@ -1,12 +1,8 @@
 ; =============================================================================
-; SUB-ROTINAS DE MANIPULAÇÃO DE VARIÁVEIS DE 32 BITS (ATmega328P)
-; Arquivo: SUBROTINA_2.asm
-; =============================================================================
-; DESCRIÇÃO DAS SUB-ROTINAS:
+; DESCRIÇÃO:
 ; 1. inc_32bits: Incrementa a variável de 32 bits apontada pelo registrador X.
 ; 2. dec_32bits: Decrementa a variável de 32 bits apontada pelo registrador X.
 ; 3. mov_32bits: Copia a variável de 32 bits apontada por X para Y.
-; OBSERVAÇÃO: Convenção Little-Endian (LSB no menor endereço de memória).
 ; =============================================================================
 
 .DSEG                        ; Seleciona o segmento de memória de dados (SRAM)
