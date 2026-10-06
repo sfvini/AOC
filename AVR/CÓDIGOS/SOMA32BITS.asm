@@ -1,7 +1,4 @@
 ; =============================================================================
-; PROGRAMA: Soma de 32 bits (C = A + B) em 4 Modos de Endereçamento (ATmega328P)
-; Arquivo: SOMA32BITS.asm
-; =============================================================================
 ; DESCRIÇÃO:
 ;   Soma duas variáveis de 32 bits (A e B) e armazena o resultado em C (32 bits).
 ;   Demonstra as 4 implementações dos modos de endereçamento da SRAM:
