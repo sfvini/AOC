@@ -7,90 +7,79 @@
 
 .INCLUDE <m328Pdef.inc>
 
-; --- Definições dos Pinos ---
-.EQU L0 = PORTD0         ; LED 0 no pino PD0
-.EQU L1 = PORTD1         ; LED 1 no pino PD1
-.EQU BT_JUN = PIND2      ; Botão JUNTOS no pino PD2
-.EQU BT_ALT = PIND3      ; Botão ALTERNADO no pino PD3
-
-; --- Registradores Auxiliares ---
 .DEF AUX = R16
-.DEF R_DEL1 = R17        ; Usado para o tempo do delay
+.DEF R_DEL1 = R17
 .DEF R_DEL2 = R18
 .DEF R_DEL3 = R19
 
 .CSEG
 .ORG 0x0000
-    RJMP SETUP
+    RJMP INICIO
 
-SETUP:
-    ; Configura a Pilha (necessário para RCALL)
+INICIO:
+    ; Configura a Pilha para o RCALL
     LDI AUX, HIGH(RAMEND)
     OUT SPH, AUX
     LDI AUX, LOW(RAMEND)
     OUT SPL, AUX
 
-    ; Configura LEDs (PD0 e PD1) como SAÍDAS (1)
-    SBI DDRD, L0
-    SBI DDRD, L1
+    ; Configura PD0 (L0) e PD1 (L1) como SAÍDAS (1)
+    SBI DDRD, 0
+    SBI DDRD, 1
 
-    ; Configura Botões (PD2 e PD3) como ENTRADAS (0)
-    CBI DDRD, BT_JUN
-    CBI DDRD, BT_ALT
+    ; Configura PD2 (JUNTOS) e PD3 (ALTERNADO) como ENTRADAS (0)
+    CBI DDRD, 2
+    CBI DDRD, 3
 
-    ; Liga Resistores de Pull-up dos botões (1)
-    SBI PORTD, BT_JUN
-    SBI PORTD, BT_ALT
+    ; Liga Resistores de Pull-up nas entradas (Escreve 1 no PORTD)
+    SBI PORTD, 2
+    SBI PORTD, 3
 
-    ; Inicia LEDs apagados (Apaga com '1')
-    SBI PORTD, L0
-    SBI PORTD, L1
+    ; Inicia LEDs apagados (Escreve 1 para desligar)
+    SBI PORTD, 0
+    SBI PORTD, 1
 
-MAIN:
-    ; Verifica se o Botão ALTERNADO foi pressionado (Gera 0)
-    SBIC PIND, BT_ALT    ; Se o pino for 1 (solto), pula a próxima linha
-    RJMP VERIFICA_JUN    ; Se pulou, vai testar o outro botão
-    RJMP MODO_ALTER      ; Se não pulou (é 0), entra no modo alternado
+LOOP_PRINCIPAL:
+    ; SBIS pula a próxima instrução se o bit estiver em 1 (botão solto)
+    SBIS PIND, 3         ; Verifica PD3 (Alternado)
+    RJMP FAZ_ALTERNADO   ; Só entra aqui se PD3 for 0 (pressionado)
 
-VERIFICA_JUN:
-    ; Verifica se o Botão JUNTOS foi pressionado (Gera 0)
-    SBIC PIND, BT_JUN    ; Se o pino for 1 (solto), pula a próxima linha
-    RJMP APAGA_TUDO      ; Se pulou, significa que nenhum está apertado
-    RJMP MODO_JUNTOS     ; Se não pulou (é 0), entra no modo juntos
+    SBIS PIND, 2         ; Verifica PD2 (Juntos)
+    RJMP FAZ_JUNTOS      ; Só entra aqui se PD2 for 0 (pressionado)
 
-APAGA_TUDO:
-    SBI PORTD, L0        ; Desliga L0
-    SBI PORTD, L1        ; Desliga L1
-    RJMP MAIN            ; Volta para o começo
+    ; Se chegou aqui, nenhum botão está pressionado
+    SBI PORTD, 0         ; Apaga L0
+    SBI PORTD, 1         ; Apaga L1
+    RJMP LOOP_PRINCIPAL
 
-; --- Modos de Piscar ---
+FAZ_ALTERNADO:
+    CBI PORTD, 0         ; Liga L0 (com 0)
+    SBI PORTD, 1         ; Desliga L1
+    LDI R_DEL1, 160      ; ~2 segundos
+    RCALL DELAY
 
-MODO_ALTER:
-    CBI PORTD, L0        ; Liga L0 (com 0)
-    SBI PORTD, L1        ; Desliga L1
-    LDI R_DEL1, 160      ; Delay de ~2s
-    RCALL DELAY_PROG
+    SBI PORTD, 0         ; Desliga L0
+    CBI PORTD, 1         ; Liga L1 (com 0)
+    LDI R_DEL1, 160      ; ~2 segundos
+    RCALL DELAY
+    
+    RJMP LOOP_PRINCIPAL  ; Volta para testar os botões
 
-    SBI PORTD, L0        ; Desliga L0
-    CBI PORTD, L1        ; Liga L1 (com 0)
-    LDI R_DEL1, 160      ; Delay de ~2s
-    RCALL DELAY_PROG
-    RJMP MAIN
+FAZ_JUNTOS:
+    CBI PORTD, 0         ; Liga L0
+    CBI PORTD, 1         ; Liga L1
+    LDI R_DEL1, 80       ; ~1 segundo
+    RCALL DELAY
 
-MODO_JUNTOS:
-    CBI PORTD, L0        ; Liga Ambos
-    CBI PORTD, L1
-    LDI R_DEL1, 80       ; Delay de ~1s
-    RCALL DELAY_PROG
-
-    SBI PORTD, L0        ; Desliga Ambos
-    SBI PORTD, L1
-    LDI R_DEL1, 80       ; Delay de ~1s
-    RCALL DELAY_PROG
-    RJMP MAIN
+    SBI PORTD, 0         ; Desliga L0
+    SBI PORTD, 1         ; Desliga L1
+    LDI R_DEL1, 80       ; ~1 segundo
+    RCALL DELAY
+    
+    RJMP LOOP_PRINCIPAL  ; Volta para testar os botões
 
 ; --- Sub-rotina de Delay ---
-DELAY_PROG:
+DELAY:
     PUSH R_DEL1
     PUSH R_DEL2
     PUSH R_DEL3
