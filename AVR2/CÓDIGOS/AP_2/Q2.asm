@@ -5,155 +5,142 @@
 
 .INCLUDE <m328Pdef.inc>
 
-; --- Definições dos Pinos ---
-.EQU L0 = PORTD0
-.EQU L1 = PORTD1
-.EQU BT_JUN = PIND2      ; INT0
-.EQU BT_ALT = PIND3      ; INT1
-
-; --- Registradores Auxiliares ---
 .DEF AUX = R16
 .DEF R_DEL1 = R17
 .DEF R_DEL2 = R18
 .DEF R_DEL3 = R19
 
-; --- Variável na Memória RAM (SRAM) ---
+; --- Variável na SRAM ---
 .DSEG
 .ORG 0x0100
-estado: .BYTE 1          ; Vai guardar: 0=Desligado, 1=Alternado, 2=Juntos
+VAR_MODO: .BYTE 1        ; 0=Desligado, 1=Alternado, 2=Juntos
 
 .CSEG
 ; --- Vetores de Interrupção ---
 .ORG 0x0000
-    RJMP SETUP           ; Reset
+    RJMP INICIO          ; Reset
 .ORG 0x0002
-    RJMP ISR_JUNTOS      ; Interrupção INT0 (PD2)
+    RJMP ISR_INT0        ; Botão JUNTOS (PD2)
 .ORG 0x0004
-    RJMP ISR_ALTER       ; Interrupção INT1 (PD3)
+    RJMP ISR_INT1        ; Botão ALTERNADO (PD3)
 
-.ORG 0x0034
-SETUP:
-    ; 1. Configura a Pilha
+.ORG 0x0034              ; Passa a área dos vetores
+INICIO:
+    ; Configura Pilha
     LDI AUX, HIGH(RAMEND)
     OUT SPH, AUX
     LDI AUX, LOW(RAMEND)
     OUT SPL, AUX
 
-    ; 2. Configura Entradas e Saídas
-    SBI DDRD, L0
-    SBI DDRD, L1
-    CBI DDRD, BT_JUN
-    CBI DDRD, BT_ALT
-    SBI PORTD, BT_JUN
-    SBI PORTD, BT_ALT
-    SBI PORTD, L0
-    SBI PORTD, L1
+    ; Configura Saídas e Entradas
+    SBI DDRD, 0
+    SBI DDRD, 1
+    CBI DDRD, 2
+    CBI DDRD, 3
+    SBI PORTD, 2
+    SBI PORTD, 3
+    SBI PORTD, 0
+    SBI PORTD, 1
 
-    ; 3. Inicia a variável "estado" com 0 (Desligado)
+    ; Zera a variável VAR_MODO
     LDI AUX, 0
-    STS estado, AUX
+    STS VAR_MODO, AUX
 
-    ; 4. Configura as Interrupções para "Qualquer Mudança de Estado"
-    ; Para ativar quando aperta E quando solta.
-    ; Código 0x05 (Binário 0000 0101) = ISC10 e ISC00 em '1'
+    ; Configura EICRA para "Qualquer Mudança Lógica" em INT0 e INT1
+    ; EICRA = 0b00000101 (0x05) -> ISC10 e ISC00 em 1
     LDI AUX, 0x05
     STS EICRA, AUX
 
-    ; 5. Habilita INT0 e INT1
-    LDI AUX, (1<<INT1)|(1<<INT0)
+    ; Habilita INT0 e INT1 no EIMSK
+    ; EIMSK = 0b00000011 (0x03)
+    LDI AUX, 0x03
     OUT EIMSK, AUX
 
-    ; 6. Liga chave geral de interrupção
+    ; Habilita interrupção global
     SEI
 
-; --- Loop Principal ---
-MAIN:
-    LDS AUX, estado      ; Lê o que as interrupções gravaram na memória
+LOOP_PRINCIPAL:
+    LDS AUX, VAR_MODO    ; Lê o valor que a interrupção gravou
 
     CPI AUX, 1           ; Se for 1, vai pro modo Alternado
-    BREQ EXEC_ALTER
+    BREQ FAZ_ALTERNADO
 
     CPI AUX, 2           ; Se for 2, vai pro modo Juntos
-    BREQ EXEC_JUNTOS
+    BREQ FAZ_JUNTOS
 
-    ; Se for 0 (ou outro valor), apaga os LEDs
-    SBI PORTD, L0
-    SBI PORTD, L1
-    RJMP MAIN
+    ; Se for 0 (Desligado), apaga os LEDs
+    SBI PORTD, 0
+    SBI PORTD, 1
+    RJMP LOOP_PRINCIPAL
 
-EXEC_ALTER:
-    CBI PORTD, L0        ; Liga L0
-    SBI PORTD, L1        ; Desliga L1
+FAZ_ALTERNADO:
+    CBI PORTD, 0
+    SBI PORTD, 1
     LDI R_DEL1, 160
-    RCALL DELAY_PROG
+    RCALL DELAY
     
-    SBI PORTD, L0        ; Desliga L0
-    CBI PORTD, L1        ; Liga L1
+    SBI PORTD, 0
+    CBI PORTD, 1
     LDI R_DEL1, 160
-    RCALL DELAY_PROG
-    RJMP MAIN
+    RCALL DELAY
+    RJMP LOOP_PRINCIPAL
 
-EXEC_JUNTOS:
-    CBI PORTD, L0        ; Liga Ambos
-    CBI PORTD, L1
+FAZ_JUNTOS:
+    CBI PORTD, 0
+    CBI PORTD, 1
     LDI R_DEL1, 80
-    RCALL DELAY_PROG
+    RCALL DELAY
 
-    SBI PORTD, L0        ; Desliga Ambos
-    SBI PORTD, L1
+    SBI PORTD, 0
+    SBI PORTD, 1
     LDI R_DEL1, 80
-    RCALL DELAY_PROG
-    RJMP MAIN
+    RCALL DELAY
+    RJMP LOOP_PRINCIPAL
 
-; --- Interrupção INT0 (Botão JUNTOS) ---
-ISR_JUNTOS:
-    PUSH AUX             ; Salva AUX
-    IN AUX, SREG         ; Lê SREG
-    PUSH AUX             ; Salva SREG
+; --- Interrupções ---
+; Utilizando R20 e R21 fixos para a ISR para evitar PUSH/POP e simplificar a leitura
 
-    ; Lê o pino para saber se foi apertado(0) ou solto(1)
-    SBIC PIND, BT_JUN    ; Se solto (1), pula o botão apertado
-    RJMP SOLTO_JUNTOS
-
-    LDI AUX, 2           ; Se apertou, salva 2 na memória
-    STS estado, AUX
+ISR_INT0: 
+    IN R20, SREG         ; Salva SREG no R20
+    
+    SBIS PIND, 2         ; Testa PD2 (pula se for 1 / solto)
+    RJMP APERTOU_INT0
+    
+    ; Se o pino for 1 (Soltou)
+    LDI R21, 0           
+    STS VAR_MODO, R21
     RJMP FIM_INT0
-
-SOLTO_JUNTOS:
-    LDI AUX, 0           ; Se soltou, salva 0 na memória
-    STS estado, AUX
-
+    
+APERTOU_INT0:
+    LDI R21, 2           ; Se o pino for 0 (Apertou)
+    STS VAR_MODO, R21
+    
 FIM_INT0:
-    POP AUX
-    OUT SREG, AUX        ; Devolve SREG
-    POP AUX              ; Devolve AUX
+    OUT SREG, R20        ; Devolve SREG
     RETI
 
-; --- Interrupção INT1 (Botão ALTERNADO) ---
-ISR_ALTER:
-    PUSH AUX
-    IN AUX, SREG
-    PUSH AUX
 
-    SBIC PIND, BT_ALT    ; Testa o pino
-    RJMP SOLTO_ALTER
-
-    LDI AUX, 1           ; Se apertou, salva 1 na memória
-    STS estado, AUX
+ISR_INT1:
+    IN R20, SREG         ; Salva SREG no R20
+    
+    SBIS PIND, 3         ; Testa PD3 (pula se for 1 / solto)
+    RJMP APERTOU_INT1
+    
+    ; Se o pino for 1 (Soltou)
+    LDI R21, 0           
+    STS VAR_MODO, R21
     RJMP FIM_INT1
-
-SOLTO_ALTER:
-    LDI AUX, 0           ; Se soltou, salva 0 na memória
-    STS estado, AUX
-
+    
+APERTOU_INT1:
+    LDI R21, 1           ; Se o pino for 0 (Apertou)
+    STS VAR_MODO, R21
+    
 FIM_INT1:
-    POP AUX
-    OUT SREG, AUX
-    POP AUX
+    OUT SREG, R20        ; Devolve SREG
     RETI
 
 ; --- Sub-rotina de Delay ---
-DELAY_PROG:
+DELAY:
     PUSH R_DEL1
     PUSH R_DEL2
     PUSH R_DEL3
