@@ -1,9 +1,8 @@
+; 1 SEM CTC
 ; Onda quadrada de 100 kHz no PB5 enquanto PD2 estiver pressionado
 ; Meio periodo = 5 
 ; Prescaler: 40 para 5
 ; Estouro: TCNT0 = 256 - 40 = 216 
-
-; 1 SEM CTC
     
 .ORG 0x0000                 ; Vetor de Reset
     RJMP setup
@@ -68,7 +67,6 @@ fim_int0:
     RETI
 
 ; 2 COM CTC
-
 ; Onda quadrada de 100 kHz no PB5 enquanto PD2 estiver pressionado (Modo CTC)
 ; Meio periodo = 5 us
 ; Contagem: 40 ciclos (de 0 ate 39 -> OCR0A = 39)
@@ -80,64 +78,57 @@ fim_int0:
 .ORG 0x001C                 ; Vetor de Comparacao A do Timer 0 (TIMER0_COMPA)
     RJMP i_tc0
 
+
 setup:
     LDI R16, HIGH(RAMEND)
     OUT SPH, R16
     LDI R16, LOW(RAMEND)
     OUT SPL, R16
-
     SBI DDRB, 5             ; PB5 como saida
     CBI PORTB, 5            ; Inicia PB5 em nivel baixo
     CBI DDRD, 2             ; PD2 como entrada
     SBI PORTD, 2            ; Habilita pull-up interno em PD2
-
     LDI R16, 39             ; Teto de comparacao: 40 - 1 = 39
     OUT OCR0A, R16
-
     LDI R16, 0x02           ; Bit WGM01 = 1 -> Ativa o modo CTC no Timer 0
     OUT TCCR0A, R16
-
     LDI R16, 0x00           ; Timer 0 inicia parado
     OUT TCCR0B, R16
-
     LDI R16, 0x02           ; Bit OCIE0A = 1 -> Habilita interrupcao por Comparacao A
     STS TIMSK0, R16
-
     LDI R16, 0x01           ; Qualquer mudanca logica em INT0 gera interrupcao
     STS EICRA, R16
     LDI R16, 0x01           ; Habilita INT0
     OUT EIMSK, R16
-
     SEI
+
 
 main:
     RJMP main
+
 
 i_tc0:
     ; No modo CTC o hardware zera TCNT0 sozinho (nao precisa recarregar)
     SBI PINB, 5             ; Inverte PB5
     RETI
 
+
 i_int0:
     PUSH R16
     IN R16, SREG
     PUSH R16
-
     SBIC PIND, 2            ; Se PD2 estiver pressionado (0), pula o RJMP
     RJMP botao_solto
-
 botao_pressionado:
     LDI R16, 0x00
     OUT TCNT0, R16          ; Zera TCNT0 para o primeiro pulso ter largura exata
     LDI R16, 0x01           ; Liga Timer 0 com prescaler 1
     OUT TCCR0B, R16
     RJMP fim_int0
-
 botao_solto:
     LDI R16, 0x00           ; Para o Timer 0
     OUT TCCR0B, R16
     CBI PORTB, 5            ; Garante saida em nivel baixo
-
 fim_int0:
     POP R16
     OUT SREG, R16
